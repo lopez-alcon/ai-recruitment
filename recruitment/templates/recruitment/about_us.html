@@ -1,0 +1,97 @@
+{% extends 'recruitment/base.html' %}
+
+{% block title %}Sobre nosotros - Alpa Careers{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    .bg-gradient {
+        background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+    }
+    .text-gradient {
+        background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .section-divider {
+        height: 4px;
+        background: linear-gradient(90deg, #3B82F6 0%, #10B981 100%);
+        margin: 2rem auto;
+        width: 80px;
+        border-radius: 2px;
+    }
+    .icon-circle {
+        background: linear-gradient(135deg, #3B82F680 0%, #10B98180 100%);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+        <h1 class="text-5xl font-bold mb-4 text-gradient">Sobre Alpa Careers</h1>
+        <p class="text-xl text-gray-600">Revolucionando el reclutamiento con inteligencia artificial</p>
+    </header>
+
+    <section class="mb-20">
+        <h2 class="text-3xl font-bold mb-6 text-center">Nuestra Misión</h2>
+        <div class="section-divider"></div>
+        <p class="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+            En Alpa Careers, nos dedicamos a transformar el panorama del reclutamiento utilizando tecnología de vanguardia. 
+            Nuestra misión es conectar el talento excepcional con oportunidades extraordinarias, creando un puente entre los 
+            profesionales más brillantes y las empresas más innovadoras del mundo.
+        </p>
+    </section>
+
+    <section class="mb-20">
+        <h2 class="text-3xl font-bold mb-6 text-center">Nuestro Enfoque</h2>
+        <div class="section-divider"></div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="icon-circle mx-auto">
+                    <i class="fas fa-robot text-3xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Tecnología Avanzada</h3>
+                <p class="text-gray-700">Utilizamos algoritmos de IA de última generación para analizar perfiles y encontrar las mejores coincidencias.</p>
+            </div>
+            <div class="text-center">
+                <div class="icon-circle mx-auto">
+                    <i class="fas fa-users text-3xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Proceso Personalizado</h3>
+                <p class="text-gray-700">Cada búsqueda se adapta a las necesidades únicas de cada empresa y candidato.</p>
+            </div>
+            <div class="text-center">
+                <div class="icon-circle mx-auto">
+                    <i class="fas fa-shield-alt text-3xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Ética y Transparencia</h3>
+                <p class="text-gray-700">Mantenemos los más altos estándares éticos en cada etapa del proceso de reclutamiento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="text-3xl font-bold mb-6 text-center">Nuestro Equipo</h2>
+        <div class="section-divider"></div>
+        <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
+            Somos un equipo diverso de expertos en tecnología, recursos humanos y ciencia de datos. Nuestra pasión 
+            por la innovación y el compromiso con la excelencia nos impulsa a mejorar constantemente nuestros servicios.
+        </p>
+        <div class="bg-gradient text-white p-8 rounded-lg shadow-lg">
+            <blockquote class="text-xl italic">
+                "En Alpa Careers, creemos en el poder de la tecnología para crear conexiones significativas entre 
+                talento y oportunidad. Estamos redefiniendo el futuro del reclutamiento, un match a la vez."
+            </blockquote>
+            <p class="mt-4 font-semibold">- Francisco Alé Palacios, CEO y Fundador</p>
+        </div>
+    </section>
+</div>
+{% endblock %}

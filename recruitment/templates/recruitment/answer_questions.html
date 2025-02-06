@@ -1,0 +1,23 @@
+{% extends 'recruitment/base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10">
+    <h2 class="text-2xl font-bold mb-4">Preguntas adicionales</h2>
+    <p class="mb-4">Por favor, responda las siguientes preguntas para completar su aplicación para el puesto de {{ application.job_offer.title }}.</p>
+    
+    <form method="post" class="space-y-6">
+        {% csrf_token %}
+        {% for question in application.questions.all %}
+            <div>
+                <label for="answer_{{ question.id }}" class="block text-sm font-medium text-gray-700">{{ question.question }}</label>
+                <textarea id="answer_{{ question.id }}" name="answer_{{ question.id }}" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+            </div>
+        {% endfor %}
+        <div>
+            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Enviar respuestas
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

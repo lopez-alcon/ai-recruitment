@@ -1,0 +1,89 @@
+{% extends 'recruitment/base.html' %}
+
+{% block title %}Contacto - Alpa Careers{% endblock %}
+
+{% block extra_css %}
+<style>
+    .bg-gradient {
+        background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+    }
+    .input-field {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300 ease-in-out;
+    }
+    .contact-bg {
+        background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Contacta con Nosotros</h1>
+            <p class="text-xl text-gray-600">Estamos aquí para ayudarte en tu próximo paso profesional</p>
+        </div>
+        
+        <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/2 bg-gradient p-8 text-white">
+                    <h2 class="text-2xl font-bold mb-6">Información de Contacto</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-4 text-2xl"></i>
+                            <span>info@alpacareers.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-4 text-2xl"></i>
+                            <span>+34 123 456 789</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-4 text-2xl"></i>
+                            <span>Calle AI, 123, 28001 Madrid, España</span>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold mb-4">Síguenos</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="hover:text-gray-200 transition duration-300">
+                                <i class="fab fa-facebook text-2xl"></i>
+                            </a>
+                            <a href="#" class="hover:text-gray-200 transition duration-300">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                            <a href="#" class="hover:text-gray-200 transition duration-300">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-8">
+                    <h2 class="text-2xl font-bold mb-6">Envíanos un Mensaje</h2>
+                    <form action="#" method="POST" class="space-y-6">
+                        {% csrf_token %}
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+                            <input type="text" name="name" id="name" class="input-field" placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+                            <input type="email" name="email" id="email" class="input-field" placeholder="tu@email.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                            <textarea name="message" id="message" rows="4" class="input-field" placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-gradient text-white font-bold py-2 px-4 rounded-md hover:opacity-90 transition duration-300 flex items-center justify-center">
+                                <i class="fas fa-paper-plane mr-2"></i> Enviar mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
