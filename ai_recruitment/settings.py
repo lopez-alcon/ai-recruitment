@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-29&mdt1saz@vz@
 DEBUG = 'RENDER' not in os.environ
 
 # Configuración de hosts permitidos
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ai-recruitment-x9qy.onrender.com', 'localhost', '127.0.0.1']
 if not DEBUG:
     ALLOWED_HOSTS.extend([
         'ai-recruitment.onrender.com',
