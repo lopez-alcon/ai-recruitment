@@ -14,6 +14,7 @@ urlpatterns = [
     path('delete-job-offer/<int:job_id>/', views.delete_job_offer, name='delete_job_offer'),
     path('logout/', views.logout_view, name='logout'),
     path('application/<int:application_id>/', views.application_detail, name='application_detail'),
+    path('delete-application/<int:application_id>/', views.delete_application, name='delete_application'),
     # Nueva ruta para descarga segura de CVs
     path('download-cv/<str:application_id>/', views.download_cv, name='download_cv'),
 ]

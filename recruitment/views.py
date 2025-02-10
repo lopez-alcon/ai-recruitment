@@ -7,6 +7,7 @@ from django.http import HttpResponse, HttpResponseForbidden
 from django.urls import reverse
 import mimetypes
 import logging
+from django.http import JsonResponse
 
 from .models import JobOffer, Candidate, AIQuestion, JobApplication
 from .forms import CandidateForm, JobOfferForm
@@ -177,6 +178,15 @@ def application_detail(request, application_id):
     if application.candidate.cv:
         application.secure_cv_url = get_secure_cv_url(application)
     return render(request, 'recruitment/application_detail.html', {'application': application})
+
+@login_required
+def delete_application(request, application_id):
+   application = get_object_or_404(JobApplication, id=application_id)
+   if request.method == 'POST':
+       application.delete()
+       return JsonResponse({'success': True})
+   return JsonResponse({'success': False})
+
 
 @login_required
 def create_job_offer(request):

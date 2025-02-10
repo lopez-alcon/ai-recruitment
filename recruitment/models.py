@@ -14,7 +14,7 @@ def validate_file_size(value):
 class JobOffer(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
-    company = models.CharField(max_length=100, default="Alpa Careers")
+    company = models.CharField(max_length=100, default="López Alcón")
     location = models.CharField(max_length=100, default="Utrera")
     job_type = models.CharField(max_length=50, default="Tiempo Completo", choices=[
         ('full_time', 'Tiempo completo'),
@@ -52,8 +52,8 @@ class Candidate(models.Model):
         # Organiza por fecha
         return f'cvs/{timezone.now().strftime("%Y/%m/%d")}/{filename}'
 
-    name = models.CharField(max_length=100, default="Sin nombre")
-    last_name = models.CharField(max_length=100, default="Sin apellido")
+    name = models.CharField(max_length=100, default="")
+    last_name = models.CharField(max_length=100, default="")
     email = models.EmailField()
     phone = models.CharField(max_length=20, null=False, blank=False)
     preferred_contact = models.CharField(max_length=10, choices=CONTACT_CHOICES, default='email')
